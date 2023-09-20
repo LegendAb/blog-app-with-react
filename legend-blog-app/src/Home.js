@@ -3,27 +3,37 @@ import BlogList from "./BlogList";
 
 
 const Home = () => {
-    const [blogs, setBlogs] = useState([
-        { title: 'My new blog website', body: 'lorem ipsum...', author: 'legend', id: 1},
-        { title: 'Welcome to the blog!', body: 'lorem ipsum...', author: 'sarah', id: 2},
-        { title: 'Web dev top tips for beginners', body: 'lorem ipsum...', author: 'legend', id: 3}
-    ]);
+    const [blogs, setBlogs] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-    const handleDelete = (id) => {
-        const newBlogs = blogs.filter(blog => blog.id !== id);
-        setBlogs(newBlogs);
-    }
+    const [name, setName] = useState("legend");
+
+    // const handleDelete = (id) => {
+    //     const newBlogs = blogs.filter(blog => blog.id !== id);
+    //     setBlogs(newBlogs);
+    // }
 
     useEffect(() => {
-        console.log("use effect ran");
-        console.log(blogs);
-    })
+        setTimeout(() => {
+            fetch('http://localhost:8000/blogs')
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                setBlogs(data);
+                setLoading(false)
+            });
+        }, 1000);        
+    }, []);
 
     
     return ( 
         <div className="home">
-            <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete} />
+            { loading && <div>Loading...</div> }
+            { blogs && <BlogList blogs={blogs} title="All Blogs!" /> }
             {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'legend')} title="Legend's blogs" /> */}
+            {/* <button onClick={() => setName("abraham")}>change name</button> */}
+            {/* <p>{ name }</p> */}
         </div>
      );
 }
