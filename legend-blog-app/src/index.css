@@ -76,6 +76,15 @@
   background: #800080;
   color: #fff;
   border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.blog-details button{
+  background: #800080;
+  color: #fff;
+  border: 0;
   padding: 80x;
   border-radius: 8px;
   cursor: pointer;
