@@ -23,6 +23,36 @@
       "body": "world",
       "author": "legend",
       "id": 4
+    },
+    {
+      "title": "hello world!",
+      "body": "lorem ipsum",
+      "author": "legend",
+      "id": 5
+    },
+    {
+      "title": "How to cook rice",
+      "body": "make sure you have enough rice in the house before attempting to cook.",
+      "author": "sarah",
+      "id": 6
+    },
+    {
+      "title": "How to cook rice",
+      "body": "make sure you have enough rice in the house before attempting to cook.",
+      "author": "sarah",
+      "id": 7
+    },
+    {
+      "title": "how to make a new directory in comand prompt",
+      "body": "make sure you have a personal computer and a window os install in it",
+      "author": "legend",
+      "id": 8
+    },
+    {
+      "title": "lastest blog post",
+      "body": "hmmmmmm..................",
+      "author": "legend",
+      "id": 9
     }
   ]
 }
